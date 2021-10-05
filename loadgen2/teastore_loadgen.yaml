@@ -29,7 +29,7 @@ spec:
         name: teastore-loadgen
         env:
           - name: WEB_UI
-            value: teastore-webui.teastore.svc
+            value: teastore-webui
           - name: WEB_PORT
             value: "80"
           - name: NUM_USERS
