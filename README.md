@@ -28,6 +28,15 @@ Or, for the Jmeter:
 kubectl apply -f loadgen-jmeter/teastore_loadgen.yaml -n teastore
 ```
 
+### Configure AppD Credentials for ServoX
+
+Update the properties in appd-config.yaml, then:
+
+```
+kubectl -n teastore apply -f appd-config.yaml
+```
+
+
 ### Deploy the Cluster Agent
 
 Update the `controllerUrl` and `account` in `cluster-agent/cluster-agent.yaml`, and replace the secret creation below with your accesskey and credentials, then run:

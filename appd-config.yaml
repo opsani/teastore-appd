@@ -1,0 +1,13 @@
+# AppD credentials to be passed to the ServoX connector and AppD agents
+apiVersion: v1
+kind: Secret
+metadata:
+  name: appd-secrets
+type: Opaque
+stringData:
+  username: ""
+  accountname: ""
+  hostname: ""
+  password: ""
+  # accesskey is used in the machine agents directly
+  accesskey: ""
