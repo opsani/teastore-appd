@@ -25,7 +25,7 @@ kubectl apply -f loadgen/loadgen.yaml -n teastore
 Or, for the Jmeter:
 
 ```
-kubectl apply -f loadgen-jmeter/loadgen.yaml -n teastore
+kubectl apply -f loadgen-jmeter/teastore_loadgen.yaml -n teastore
 ```
 
 ### Deploy the Cluster Agent
