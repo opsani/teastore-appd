@@ -1,0 +1,25 @@
+apiVersion: appdynamics.com/v1alpha1
+kind: Clusteragent
+metadata:
+  name: k8s-cluster-agent
+  namespace: appdynamics
+spec:
+  appName: "teastore"
+  controllerUrl: ""
+  account: ""
+  logLevel: "DEBUG"
+  image: "docker.io/appdynamics/cluster-agent:latest"
+  serviceAccountName: appdynamics-cluster-agent
+  nsToMonitor:
+    - "teastore"
+  instrumentationMethod: Env
+  nsToInstrumentRegex: teastore
+  appNameStrategy: manual
+  defaultAppName: teastore-appdynamics
+  instrumentationRules:
+    - namespaceRegex: teastore
+      matchString: (teastore-webui|teastore-registry|teastore-recommender|teastore-persistence|teastore-image|teastore-auth)
+      language: java
+      imageInfo:
+        image: docker.io/appdynamics/java-agent:20.3.0
+        agentMountPath: /opt/appdynamics
